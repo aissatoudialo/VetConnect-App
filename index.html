@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetConnect - Connexion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container-fluid login-container">
+        <div class="row h-100">
+            
+            <div class="col-md-4 d-flex flex-column justify-content-center align-items-center bg-white p-5 left-panel">
+                <div class="login-box w-100 text-center">
+                    <h1 class="mb-5">Bienvenue</h1>
+                    <form>
+                        <div class="input-group mb-4 custom-input">
+                            <span class="input-group-text bg-white"><i class="fa-regular fa-user"></i></span>
+                            <input type="email" class="form-control border-start-0" placeholder="Email" required>
+                        </div>
+                        <div class="input-group mb-4 custom-input">
+                            <span class="input-group-text bg-white"><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" class="form-control border-start-0" placeholder="Mot de passe" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3 w-100 btn-connect">Se connecter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-8 p-0 d-none d-md-flex right-panel">
+                <div id="vetConnectCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel">
+                    
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#vetConnectCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#vetConnectCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#vetConnectCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#vetConnectCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#vetConnectCarousel" data-bs-slide-to="4"></button>
+                    </div>
+                    
+                    <div class="carousel-inner h-100">
+                        <div class="carousel-item active h-100 item-1">
+                            <div class="carousel-caption brand-text">
+                                <h2>Espace Sécurisé</h2>
+                                <p>Accédez à votre interface dédiée en toute confidentialité.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100 item-2">
+                            <div class="carousel-caption brand-text">
+                                <h2>Suivi des Patients</h2>
+                                <p>Visualisez l'état de santé et l'environnement de chaque animal en temps réel.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100 item-3">
+                            <div class="carousel-caption brand-text">
+                                <h2>Alertes Intelligentes</h2>
+                                <p>Soyez immédiatement notifié en cas de dépassement des seuils critiques.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100 item-4">
+                            <div class="carousel-caption brand-text">
+                                <h2>Traçabilité des Soins</h2>
+                                <p>Consultez l'historique complet des interventions pour chaque enclos.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100 item-5">
+                            <div class="carousel-caption brand-text">
+                                <h2>Gestion Simplifiée</h2>
+                                <p>Pilotez l'ensemble de votre clinique depuis une plateforme unique.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#vetConnectCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#vetConnectCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
