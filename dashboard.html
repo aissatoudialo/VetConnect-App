@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VetConnect - Espace Soigneur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar Complétée -->
+        <nav class="col-md-2 sidebar shadow">
+            <div class="text-center mb-4">
+                <h4 class="fw-bold">VetConnect</h4>
+                <small class="text-info">Espace Soigneur</small>
+            </div>
+            <ul class="nav flex-column gap-1">
+                <li class="nav-item"><a class="nav-link active" href="dashboard.html"><i class="fas fa-th-large me-2"></i> Tableau de bord</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell me-2"></i> Alertes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-door-open me-2"></i> Admissions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-file-alt me-2"></i> Rapport animal</a></li>
+                <li class="nav-item mt-3"><a class="nav-link text-warning" href="#"><i class="fas fa-exclamation-triangle me-2"></i> Signaler un problème</a></li>
+                <!-- Séparateur et bouton de déconnexion -->
+                <li class="nav-item mt-5"><a class="nav-link text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i> Déconnexion</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-10 main-content py-4">
+    
+            <!-- ALERTE CRITIQUE -->
+            <div class="alert alert-danger shadow-sm border-0 d-flex justify-content-between align-items-center mb-4" role="alert">
+                <span><i class="fas fa-exclamation-circle me-2"></i> <strong>ALERTE :</strong> Température anormale (40.5°C) - <strong>Enclos #3 (Rex)</strong></span>
+                <a href="#" class="btn btn-danger btn-sm fw-bold px-3">INTERVENIR</a>
+            </div>
+
+            <!-- ENTÊTE -->
+            <div class="mb-4">
+                <h2 class="fw-bold mb-0">Mes Enclos Assignés</h2>
+                <p class="text-muted small">Surveillance temps réel des constantes vitales</p>
+            </div>
+
+            <!-- GRILLE DES ENCLOS -->
+            <div class="row g-4">
+                
+                <!-- CARTE 1 : Stable -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm enclos-card pointer" onclick="location.href='fiche_animal.html';">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-light text-secondary border">Enclos #1</span>
+                                <span class="small text-success fw-bold"><i class="fas fa-check-circle"></i> Stable</span>
+                            </div>
+                            <div class="text-center mb-3">
+                                <h3 class="fw-bold mb-0">Lina</h3>
+                                <p class="text-muted small">Chat (Siamois)</p>
+                                <div class="p-3 bg-light rounded-3 border">
+                                    <small class="text-muted d-block fw-bold text-uppercase" style="font-size: 0.65rem;">Température</small>
+                                    <span class="h2 fw-bold text-dark">38.5°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARTE 2 : En soin -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm enclos-card pointer" onclick="location.href='fiche_animal.html';">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-light text-secondary border">Enclos #2</span>
+                                <span class="small text-warning fw-bold"><i class="fas fa-clock"></i> En soin</span>
+                            </div>
+                            <div class="text-center mb-3">
+                                <h3 class="fw-bold mb-0">Max</h3>
+                                <p class="text-muted small">Chien (Labrador)</p>
+                                <div class="p-3 bg-light rounded-3 border">
+                                    <small class="text-muted d-block fw-bold text-uppercase" style="font-size: 0.65rem;">Température</small>
+                                    <span class="h2 fw-bold text-dark">39.2°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARTE 3 : Alerte -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm enclos-card border-top border-danger border-5 bg-danger bg-opacity-10 pointer" onclick="location.href='alertes.html';">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-danger text-white">Enclos #3</span>
+                                <span class="small text-danger fw-bold text-uppercase"><i class="fas fa-exclamation-triangle"></i> Alerte</span>
+                            </div>
+                            <div class="text-center mb-3">
+                                <h3 class="fw-bold mb-0 text-danger">Rex</h3>
+                                <p class="text-muted small">Chien (Berger)</p>
+                                <div class="p-3 bg-white rounded-3 border border-danger">
+                                    <small class="text-danger d-block fw-bold text-uppercase" style="font-size: 0.65rem;">Température Critique</small>
+                                    <span class="h2 fw-bold text-danger">40.5°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
