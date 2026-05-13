@@ -172,56 +172,20 @@ body:has(.main-content) .main-content {
     color: white;
 }
 
-/* --- ESPACE SOIGNEUR (Version Desktop Only) --- */
-
-/* 1. L'effet de rebond et curseur pour les enclos */
-.pointer {
+ /* selection de type de soins */
+.soin-type-btn {
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    background: white;
+    padding: 1rem 0.5rem;
+    text-align: center;
     cursor: pointer;
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.15s;
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 500;
+    width: 100%;
 }
-
-.pointer:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
-}
-
-.pointer:active {
-    transform: scale(0.96);
-    transition: transform 0.1s;
-}
-
-/* 2. Style des capteurs pour la Fiche Animal */
-.sensor-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: block;
-    margin-top: 5px;
-}
-
-/* 3. Pastille de statut (Stable, Alerte, etc.) */
-.statut-dot {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 8px;
-}
-
-/* 4. Bordure d'alerte spécifique */
-.border-alert {
-    border-left: 5px solid #dc3545 !important;
-}
-
-/* Adaptation pour les petits écrans sur les grilles d'enclos */
-@media (max-width: 768px) {
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-    }
-    .sidebar {
-        width: 100%;
-        position: relative;
-        min-height: auto;
-    }
-}
+.soin-type-btn i { display: block; font-size: 1.5rem; margin-bottom: 0.4rem; }
+.soin-type-btn:hover { border-color: #0d6efd; color: #0d6efd; background: #f0f6ff; }
+.soin-type-btn.selected { border-color: #0d6efd; color: #0d6efd; background: #f0f6ff; box-shadow: 0 0 0 3px rgba(13,110,253,0.15); }

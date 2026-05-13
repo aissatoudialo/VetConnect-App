@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VetConnect - Fiche Animal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container-fluid p-0">
+    <div class="row g-0">
+        <!-- sidebar-->
+        <nav class="col-md-2 sidebar shadow">
+            <div class="text-center mb-4">
+                <h4 class="fw-bold">VetConnect</h4>
+                <small class="text-info">Enregistrer un soin</small>
+            </div>
+            <ul class="nav flex-column gap-1">
+                <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-th-large me-2"></i> Tableau de bord</a></li>
+                <li class="nav-item"><a class="nav-link active" href="ficheAnimal.html"><i class="fas fa-dog me-2"></i> Fiche Animal</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell me-2"></i> Alertes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-door-open me-2"></i> Admissions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-file-alt me-2"></i> Rapport animal</a></li>
+                <li class="nav-item mt-3"><a class="nav-link text-warning" href="#"><i class="fas fa-exclamation-triangle me-2"></i> Signaler un problème</a></li>
+                <!-- séparateur et bouton de déconnexion -->
+                <li class="nav-item mt-5"><a class="nav-link text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i> Déconnexion</a></li>
+            </ul>
+        </nav>
+
+        
+      <!-- main content -->
+        <main class="main-content col py-4 px-4">
+
+            <!-- header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold mb-0">Enregistrer un soin</h2>
+                    <p class="text-muted small mb-0">Saisie du soin</p>
+                </div>
+                <a href="ficheAnimal.html" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-arrow-left me-2"></i>Retour à la fiche animal
+                </a>
+            </div>
+
+            <!-- formulaire -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+
+                    <h5 class="fw-bold mb-1">
+                        <i class="fas fa-notes-medical me-2 text-primary"></i>Détails du soin
+                    </h5>
+
+                    <form id="soinForm">
+
+                        <!-- type de soin -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Type de soin <span class="text-danger">*</span></label>
+                            <input type="hidden" id="typeSoin" required>
+                            <div class="row g-2">
+                                <div class="col-6 col-md-3">
+                                    <div class="soin-type-btn" onclick="selectType(this, 'Repas')">
+                                        <i class="fas fa-utensils text-warning"></i>Repas
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="soin-type-btn" onclick="selectType(this, 'Médicament')">
+                                        <i class="fas fa-pills" style="color:#8b5cf6;"></i>Médicament
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="soin-type-btn" onclick="selectType(this, 'Injection')">
+                                        <i class="fas fa-syringe text-danger"></i>Injection
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="soin-type-btn" onclick="selectType(this, 'Pansement')">
+                                        <i class="fas fa-band-aid" style="color:#ec4899;"></i>Pansement
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="soin-type-btn" onclick="selectType(this, 'Nettoyage')">
+                                        <i class="fas fa-soap text-info"></i>Nettoyage
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="soin-type-btn" onclick="selectType(this, 'Hydratation')">
+                                        <i class="fas fa-tint text-primary"></i>Hydratation
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="soin-type-btn" onclick="selectType(this, 'Examen')">
+                                        <i class="fas fa-stethoscope text-success"></i>Examen
+                                    </div>
+                                </div>
+                            </div>
+                            <!--ne marche pas car les bouton sont non fonctionnel-->
+                            <div id="typeError" class="text-danger small mt-1" style="display:none;">
+                                Veuillez sélectionner un type de soin.
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- soigneur -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Soigneur / Vétérinaire <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="soigneur" placeholder="Nom du soigneur ou vétérinaire" required>
+                            </div>
+                            <!-- produit -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Produit utilisé <span class="text-muted fw-normal">(facultatif)</span></label>
+                                <input type="text" class="form-control" id="produit" placeholder="Ex : Antibiotiques">
+                            </div>
+                        </div>
+
+                        <!-- description -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Description <span class="text-danger">*</span></label>
+                            <textarea
+                                class="form-control"
+                                id="description"
+                                rows="4"
+                                placeholder="Décrire le soin effectué, observations, réaction de l'animal..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <!-- boutons -->
+                        <div class="d-flex justify-content-between flex-wrap gap-2">
+                            <a href="ficheAnimal.html" class="btn btn-outline-secondary">
+                                <i class="fas fa-times me-2"></i>Annuler
+                            </a>
+                            <button type="button" class="btn btn-primary px-4" onclick="enregistrerSoin()">
+                                <i class="fas fa-save me-2"></i>Enregistrer le soin
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
