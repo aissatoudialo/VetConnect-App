@@ -15,7 +15,7 @@
         }
 
         body{
-            background:#f4f7f9;
+            background:#eef2f7;
             padding:40px;
             color:#333;
         }
@@ -32,110 +32,101 @@
         h1{
             text-align:center;
             margin-bottom:40px;
-            color:#2c3e50;
+            color:#0f172a;
         }
 
         h2{
             margin-top:35px;
             margin-bottom:15px;
-            color:#27ae60;
-            border-left:5px solid #27ae60;
+            color:#0f172a;
+            border-left:5px solid #0f172a;
             padding-left:10px;
-        }
-
-        .infos{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:15px;
-            margin-bottom:20px;
-        }
-
-        .card{
-            background:#f9f9f9;
-            padding:15px;
-            border-radius:8px;
         }
 
         table{
             width:100%;
             border-collapse:collapse;
-            margin-top:10px;
+            margin-top:15px;
         }
 
         table th{
-            background:#27ae60;
+            background:#0f172a;
             color:white;
-            padding:12px;
+            padding:14px;
             text-align:left;
         }
 
         table td{
-            padding:12px;
+            padding:14px;
             border-bottom:1px solid #ddd;
         }
 
+        table tr:nth-child(even){
+            background:#f8fafc;
+        }
+
         table tr:hover{
-            background:#f2f2f2;
-        }
-
-        ul{
-            margin-top:15px;
-            padding-left:20px;
-        }
-
-        ul li{
-            margin-bottom:10px;
+            background:#e2e8f0;
         }
 
         .alert{
-            background:#ffeaea;
-            padding:15px;
-            border-left:5px solid red;
-            border-radius:5px;
+            background:#e0ecff;
+            border-left:5px solid #0f172a;
+            padding:20px;
+            border-radius:8px;
+            margin-top:15px;
+        }
+
+        .alert ul{
+            padding-left:20px;
+        }
+
+        .alert li{
+            margin-bottom:10px;
         }
 
         .buttons{
-            margin-top:40px;
             display:flex;
-            gap:15px;
             justify-content:center;
+            gap:20px;
+            margin-top:40px;
         }
 
         button{
-            padding:14px 25px;
+            padding:14px 24px;
             border:none;
             border-radius:8px;
-            cursor:pointer;
             font-size:16px;
+            cursor:pointer;
             transition:0.3s;
         }
 
         .print-btn{
-            background:#27ae60;
+            background:#0f172a;
             color:white;
         }
 
         .print-btn:hover{
-            background:#219150;
+            background:#1e293b;
         }
 
         .back-btn{
-            background:#34495e;
+            background:#334155;
             color:white;
         }
 
         .back-btn:hover{
-            background:#2c3e50;
+            background:#475569;
         }
 
         @media(max-width:700px){
 
-            .infos{
-                grid-template-columns:1fr;
-            }
-
             .container{
                 padding:20px;
+            }
+
+            table{
+                font-size:14px;
             }
 
         }
@@ -146,15 +137,15 @@
 
 <?php
 
-    // Informations Animal (exemple)
-    $animal = [
-        "nom" => "Simba",
-        "espece" => "Lion",
-        "age" => "5 ans",
-        "date_entree" => "10/05/2026",
-        "date_sortie" => "15/05/2026",
-        "soigneur" => "Jean Dupont"
-    ];
+// Informations Animal
+$animal = [
+    "nom" => "Simba",
+    "espece" => "Lion",
+    "age" => "5 ans",
+    "date_entree" => "10/05/2026",
+    "date_sortie" => "15/05/2026",
+    "soigneur" => "Jean Dupont"
+];
 
 ?>
 
@@ -162,42 +153,47 @@
 
     <h1>Rapport d'Hospitalisation Animal</h1>
 
-    <!-- Informations générales -->
+    <!-- Tableau Informations -->
     <h2>Informations Générales</h2>
 
-    <div class="infos">
+    <table>
 
-        <div class="card">
-            <strong>Nom :</strong>
-            <?php echo $animal["nom"]; ?>
-        </div>
+        <tr>
+            <th>Information</th>
+            <th>Donnée</th>
+        </tr>
 
-        <div class="card">
-            <strong>Espèce :</strong>
-            <?php echo $animal["espece"]; ?>
-        </div>
+        <tr>
+            <td>Nom</td>
+            <td><?php echo $animal["nom"]; ?></td>
+        </tr>
 
-        <div class="card">
-            <strong>Âge :</strong>
-            <?php echo $animal["age"]; ?>
-        </div>
+        <tr>
+            <td>Espèce</td>
+            <td><?php echo $animal["espece"]; ?></td>
+        </tr>
 
-        <div class="card">
-            <strong>Soigneur :</strong>
-            <?php echo $animal["soigneur"]; ?>
-        </div>
+        <tr>
+            <td>Âge</td>
+            <td><?php echo $animal["age"]; ?></td>
+        </tr>
 
-        <div class="card">
-            <strong>Date d'entrée :</strong>
-            <?php echo $animal["date_entree"]; ?>
-        </div>
+        <tr>
+            <td>Soigneur Responsable</td>
+            <td><?php echo $animal["soigneur"]; ?></td>
+        </tr>
 
-        <div class="card">
-            <strong>Date de sortie :</strong>
-            <?php echo $animal["date_sortie"]; ?>
-        </div>
+        <tr>
+            <td>Date d'entrée</td>
+            <td><?php echo $animal["date_entree"]; ?></td>
+        </tr>
 
-    </div>
+        <tr>
+            <td>Date de sortie</td>
+            <td><?php echo $animal["date_sortie"]; ?></td>
+        </tr>
+
+    </table>
 
     <!-- Soins -->
     <h2>Soins Effectués</h2>
@@ -206,7 +202,7 @@
 
         <tr>
             <th>Date</th>
-            <th>Soin</th>
+            <th>Soin effectué</th>
             <th>Responsable</th>
         </tr>
 
