@@ -1,1 +1,117 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport Animal</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            margin: 40px;
+            background:#f5f5f5;
+        }
+
+        .rapport{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+        }
+
+        h1{
+            color:#2c3e50;
+        }
+
+        h2{
+            margin-top:30px;
+            color:#27ae60;
+        }
+
+        table{
+            width:100%;
+            border-collapse: collapse;
+            margin-top:10px;
+        }
+
+        table, th, td{
+            border:1px solid #ccc;
+        }
+
+        th, td{
+            padding:10px;
+        }
+
+        .btn{
+            margin-top:30px;
+            padding:12px 20px;
+            background:#27ae60;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="rapport">
+
+    <h1>Rapport d'Hospitalisation</h1>
+
+    <h2>Informations de l'animal</h2>
+
+    <p><strong>Nom :</strong> Simba</p>
+    <p><strong>Espèce :</strong> Lion</p>
+    <p><strong>Date d'entrée :</strong> 10/05/2026</p>
+    <p><strong>Date de sortie :</strong> 15/05/2026</p>
+
+    <h2>Soins effectués</h2>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Soin</th>
+        </tr>
+
+        <tr>
+            <td>11/05</td>
+            <td>Nettoyage de la blessure</td>
+        </tr>
+
+        <tr>
+            <td>12/05</td>
+            <td>Injection antibiotique</td>
+        </tr>
+    </table>
+
+    <h2>Mesures relevées</h2>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Poids</th>
+            <th>Température</th>
+        </tr>
+
+        <tr>
+            <td>11/05</td>
+            <td>180 kg</td>
+            <td>38.2°C</td>
+        </tr>
+    </table>
+
+    <h2>Alertes</h2>
+
+    <ul>
+        <li>Température élevée le 12/05</li>
+        <li>Baisse d'appétit observée</li>
+    </ul>
+
+    <button class="btn">
+        Générer le PDF
+    </button>
+
+</div>
+
+</body>
+</html>
